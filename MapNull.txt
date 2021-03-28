@@ -1,0 +1,38 @@
+package com.test.oops;
+
+import java.util.HashMap;
+import java.util.Map.Entry;
+
+public class MapNull {
+
+	public static void main(String[] args) {
+
+		HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
+		map.put(102, 10);
+		map.put(96, 2);
+		map.put(null, null);
+		map.put(null, 21);
+		map.put(14, null);
+		map.put(30, 14);
+		map.put(710, 18);
+
+		for (Entry<Integer, Integer> m : map.entrySet()) {
+			System.out.println("Key: " + m.getKey() + "Value: " + m.getValue());
+		}
+
+		System.out.println(map.containsValue(18));
+		System.out.println(map.containsKey(710));
+
+		System.out.println(map.get(710));
+		System.out.println(map);
+
+		map.remove(null);
+		System.out.println("After removing an element: ");
+		System.out.println(map);
+
+		System.out.println("After adding an element: ");
+		map.putIfAbsent(36, 2661);
+		System.out.println(map);
+
+	}
+}
